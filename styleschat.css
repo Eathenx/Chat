@@ -1,0 +1,100 @@
+
+
+h2 {
+  color: #333;
+}
+
+input[type="text"] {
+  padding: 8px;
+  width: 220px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+button {
+  margin-top: 15px ;
+  padding: 8px 16px;
+  background: #0078d7;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #005fa3;
+}
+
+#respuesta {
+  margin-top: 20px;
+  color: #0078d7;
+  font-weight: bold;
+}
+
+body {
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .chat-header {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #0078d7;
+    }
+    .chat-history {
+      flex: 1;
+      margin: 50px 20px 80px 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 16px;
+      overflow-y: auto;
+      min-height: 200px;
+      max-height: 60vh;
+    }
+    .chat-footer {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: calc(100% - 40px);
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+    }
+    #usuario {
+      padding: 6px;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #555;
+      min-width: 120px;
+      margin-right: 10px;
+      align-self: flex-end;
+    }
+    #mensaje {
+      flex: 1;
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    #enviar {
+      padding: 8px 16px;
+      background: #0078d7;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    #enviar:hover {
+      background: #005fa3;
+    }
+    #respuesta {
+      display: none;
+    }
