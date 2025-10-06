@@ -1,15 +1,8 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
-const admin = require("firebase-admin");
 
 let mainWin;
 let chatWin;
 let user = null;
-
-const serviceAccount = require("./firebase-key.json");
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
-const db = admin.firestore();
 
 function createWindow() {
   mainWin = new BrowserWindow({
@@ -25,6 +18,7 @@ function createWindow() {
 }
 
 app.whenReady().then(createWindow);
+
 ipcMain.on('entrar-usuario', (event, usuario) => {
   user = usuario;
 
@@ -43,24 +37,6 @@ ipcMain.on('entrar-usuario', (event, usuario) => {
   });
 
   mainWin.close();
-});
-
-ipcMain.on('enviar-mensaje', async (event, mensaje) => {
-  try {
-    const docRef = await db.collection('Data').add({
-      User: user,
-      mensaje: mensaje,
-      fecha: new Date()
-    });
-  } catch (error) {
-    event.reply('respuesta-servidor', 'Error al guardar en Firebase: ' + error.message);
-  }
-});
-
-ipcMain.on('solicitar-historial', async (event) => {
-  const snapshot = await db.collection('Data').orderBy('fecha').get();
-  const mensajes = snapshot.docs.map(doc => doc.data());
-  event.sender.send('historial-mensajes', mensajes);
 });
 
 app.on('window-all-closed', () => {
