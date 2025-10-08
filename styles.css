@@ -1,35 +1,21 @@
 body {
   font-family: Arial, sans-serif;
-  background: #f5f5f5;
+  background: #242424;
   margin: 0;
   padding: 40px;
   text-align: center;
 }
 
 h2 {
-  color: #333;
+  color: #bebebe;
 }
 
 input[type="text"] {
   padding: 8px;
   width: 220px;
-  border: 1px solid #ccc;
+  border: 1px solid #bebebe;
   border-radius: 4px;
   margin-right: 10px;
-}
-
-button {
-  margin-top: 15px ;
-  padding: 8px 16px;
-  background: #0078d7;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #005fa3;
 }
 
 #respuesta {
@@ -37,3 +23,64 @@ button:hover {
   color: #0078d7;
   font-weight: bold;
 }
+
+.input {
+ line-height: 28px;
+ border: 2px solid transparent;
+ border-bottom-color: #777;
+ padding: .2rem 0;
+ outline: none;
+ background-color: transparent;
+ color: #000000;
+ transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+ margin-bottom: 15px;
+}
+
+.input:focus, input:hover {
+ outline: none;
+ padding: .2rem 1rem;
+ border-radius: 1rem;
+ border-color: #000000;
+}
+
+.input::placeholder {
+ color: #777;
+}
+
+.input:focus::placeholder {
+ opacity: 0;
+ transition: opacity .3s;
+}
+
+
+button {
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #636363;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  background-color: #0b3a27;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+button:active {
+  transform: translateY(-1px);
+}
+
+
+
+
+

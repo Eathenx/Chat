@@ -24,7 +24,7 @@ ipcMain.on('entrar-usuario', (event, usuario) => {
 
   chatWin = new BrowserWindow({
     width: 1200,
-    height: 900,
+    height: 680,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false
